@@ -4,7 +4,7 @@
 
 **A dual-pane resume editor built with Next.js and Supabase.**
 
-![Project Demo](./employme/assets/demo.gif)
+![Project Demo](./assets/demo.gif)
 
 > **Context:** This project was built during a 48 hour hackathon. It is a functional prototype designed to solve the pain of managing multiple resume versions. This branch highlights my individual contribution of the resume editor/management system.
 
