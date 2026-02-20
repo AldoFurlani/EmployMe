@@ -2,6 +2,7 @@ import AppShell from "@/components/layout/AppShell"
 import { getJobs } from "@/app/actions/jobs"
 import NotificationsCard from "@/components/dashboard/NotificationsCard"
 import ApplicationFlowCard from "@/components/dashboard/ApplicationFlowCard"
+export const dynamic = 'force-dynamic';
 
 export default async function DashboardPage() {
   const jobs = await getJobs()

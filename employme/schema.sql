@@ -1,4 +1,3 @@
-
 create table public.jobs (
   id uuid not null default gen_random_uuid (),
   company text not null,

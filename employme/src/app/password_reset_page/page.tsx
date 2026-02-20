@@ -1,15 +1,18 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { updatePassword } from "@/app/actions/auth"
 import { Button } from "@/components/ui/button"
 import { useRouter, useSearchParams } from "next/navigation"
 
-export default function ResetPasswordPage() {
+// 1. Move everything into a Child component
+function PasswordResetForm() {
   const [password, setPassword] = useState("")
   const [message, setMessage] = useState("")
   const [loading, setLoading] = useState(false)
   const router = useRouter()
+  
+  // Now this hook is safe! It is inside a component that gets wrapped below.
   const searchParams = useSearchParams()
 
   useEffect(() => {
@@ -26,9 +29,7 @@ export default function ResetPasswordPage() {
     }
 
     setLoading(true)
-
     const result = await updatePassword(password)
-
     setLoading(false)
 
     if (result?.error) {
@@ -71,5 +72,14 @@ export default function ResetPasswordPage() {
         )}
       </div>
     </main>
+  )
+}
+
+// 2. The default export is now just a Parent wrapper for the Suspense boundary
+export default function ResetPasswordPage() {
+  return (
+    <Suspense fallback={<div className="flex min-h-screen items-center justify-center">Loading form...</div>}>
+      <PasswordResetForm />
+    </Suspense>
   )
 }

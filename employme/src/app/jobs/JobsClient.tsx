@@ -38,9 +38,9 @@ function groupJobsByStatus(jobs: Job[]) {
   }
 }
 
-export default function JobsClient() {
+export default function JobsClient({ jobs: initialJobs }: { jobs: Job[] }) {
   const router = useRouter()
-  const [jobs, setJobs] = useState<Job[]>([])
+  const [jobs, setJobs] = useState<Job[]>(initialJobs)
   const [loading, setLoading] = useState(true)
 
   // Load jobs when component mounts
