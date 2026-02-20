@@ -53,11 +53,14 @@ export async function createJob(job: Partial<Job>) {
     throw new Error("You must be logged in to create a job")
   }
 
-  const { data: newJob, error: jobError } = await supabase
+  const jobId = crypto.randomUUID()
+
+  const { error: jobError } = await supabase
     .from("jobs")
-    .insert(job)
-    .select()
-    .single()
+    .insert({ 
+      id: jobId, 
+      ...job 
+    })
 
   if (jobError) {
     console.error("Failed to create job:", jobError)
@@ -68,7 +71,7 @@ export async function createJob(job: Partial<Job>) {
     .from("user_jobs")
     .insert({
       user_id: user.id,
-      job_id: newJob.id,
+      job_id: jobId,
     })
 
   if (linkError) {
@@ -79,7 +82,6 @@ export async function createJob(job: Partial<Job>) {
   revalidatePath("/jobs")
   revalidatePath("/calendar")
 }
-
 /**
  * Update job status (used by drag & drop)
  */

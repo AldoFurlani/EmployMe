@@ -64,3 +64,22 @@ create policy "Users can view activities for their jobs" on public.activities
       where user_jobs.job_id = activities.job_id and user_jobs.user_id = auth.uid()
     )
   );
+
+create policy "Users can insert jobs" on public.jobs
+  for insert to authenticated with check (true);
+
+create policy "Users can update their own linked jobs" on public.jobs
+  for update using (
+    exists (
+      select 1 from public.user_jobs 
+      where user_jobs.job_id = jobs.id and user_jobs.user_id = auth.uid()
+    )
+  );
+
+create policy "Users can delete their own linked jobs" on public.jobs
+  for delete using (
+    exists (
+      select 1 from public.user_jobs 
+      where user_jobs.job_id = jobs.id and user_jobs.user_id = auth.uid()
+    )
+  );
