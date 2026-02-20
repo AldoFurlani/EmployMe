@@ -1,10 +1,12 @@
 # EmployMe (Hackathon Submission)
 
+[Live Demo](https://your-app.vercel.app)
+
 ![Next.js](https://img.shields.io/badge/Next.js-14-black) ![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue) ![Supabase](https://img.shields.io/badge/Supabase-Database-green)
 
 **A dual-pane resume editor built with Next.js and Supabase.**
 
-![Project Demo](./employme/assets/demo.gif)
+![Project Demo](./assets/demo.gif)
 
 > **Context:** This project was built during a 48 hour hackathon. It is a functional prototype designed to solve the pain of managing multiple resume versions. This branch highlights my individual contribution of the resume editor/management system.
 
