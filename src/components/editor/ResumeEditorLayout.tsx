@@ -6,7 +6,6 @@ import { ResumeData } from '@/types/resume';
 import { ResumeForm } from '@/components/editor/ResumeForm';
 import { Navbar } from '@/components/layout/Navbar';
 
-// Dynamic Import (Same as before)
 const PDFPreview = dynamic(
   () => import('@/components/pdf/PDFViewerComponent').then((mod) => mod.PDFViewerComponent),
   { ssr: false, loading: () => <div className="p-10 text-center">Loading PDF...</div> }

@@ -27,7 +27,7 @@ export default function DatabaseEditorPage() {
 
       if (error || !resume) {
         alert('Resume not found');
-        router.push('/dashboard');
+        router.push('/resume');
       } else {
         setData(resume.content);
         setTitle(resume.title);

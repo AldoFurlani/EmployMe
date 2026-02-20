@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { getJobs } from "@/app/actions/jobs"
 import JobsClientWrapper from "./JobsClientWrapper"
 

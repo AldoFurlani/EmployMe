@@ -5,6 +5,7 @@ import { resetPassword } from "@/app/actions/auth"
 import { Button } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
 
+
 export default function ResetPasswordPage() {
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
