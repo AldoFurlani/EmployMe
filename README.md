@@ -1,5 +1,7 @@
 # EmployMe (Hackathon Submission)
 
+[Live Demo](https://your-app.vercel.app)
+
 ![Next.js](https://img.shields.io/badge/Next.js-14-black) ![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue) ![Supabase](https://img.shields.io/badge/Supabase-Database-green)
 
 **A dual-pane resume editor built with Next.js and Supabase.**
