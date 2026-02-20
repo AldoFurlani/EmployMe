@@ -1,6 +1,6 @@
 # EmployMe (Hackathon Submission)
 
-[Live Demo](https://your-app.vercel.app) (Confirm email with supabase confirmation email after signing up to log in)
+[Live Demo](employ-me-rho.vercel.app) (Confirm email with supabase confirmation email after signing up to log in)
 
 ![Next.js](https://img.shields.io/badge/Next.js-14-black) ![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue) ![Supabase](https://img.shields.io/badge/Supabase-Database-green)
 
